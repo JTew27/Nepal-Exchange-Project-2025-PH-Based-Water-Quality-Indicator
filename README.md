@@ -3,20 +3,21 @@
 As part of my studies in my second year of university me and 7 other students were selected to go on the Computer Science Exchange Project out in Nepal in April 2025 for a week. This Exchange aimed to be a collaborative project between students from Leeds Beckett University and the British College of Kathmandu in order to build a sustainable project that could solve a local real world problem. With many people throughout Nepal not having access to clean drinking water alongside my teamates in just two days we aimed to produce a system that could detect safe drinking water and its quality based of the PH level. Utilising an analog sensor, LED lights and other hardware we created a system that could test various samples and indicate if the water was safe to drink in order to ensure safety.
 
 ## Hardware & Technologies
-- Arduino microcontroller
-- Analogue pH sensor
-- LED indicators
-- LCD display
-- Python
-- Arduino IDE
-- Laptop / USB hardware connection
+- Arduino: Microcontroller used to process analogue sensor readings and control the connected components.
+- Analogue pH Sensor: Measures the pH level of water samples through analogue voltage readings.
+- 16x2 LCD Display: Displays the calculated pH value in real time.
+- LED Indicators: Green and red LEDs provide visual feedback depending on the measured pH range.
+- Arduino IDE: Used to develop and upload the microcontroller code.
+- C/C++: Used to implement sensor readings, calibration calculations, conditional logic and hardware control.
 
 ## System Functionality
-- Measures the pH level of different water samples using an analogue sensor.
-- Processes sensor readings to determine the measured pH level.
-- Uses predefined pH thresholds to categorise the readings.
-- Displays the pH measurement and result through an LCD screen.
-- Uses LED indicators to provide immediate visual feedback.
+- Collects multiple analogue readings from the pH sensor through the Arduino's A0 input.
+- Sorts sensor readings and averages the middle six measurements to reduce noise.
+- Converts the averaged analogue voltage into an estimated pH value using experimentally determined calibration parameters.
+- Displays the calculated pH value on a 16x2 LCD screen.
+- Compares the measured pH against a predefined range of 6.5–7.8.
+- Activates a green LED when the measurement falls within the defined range and a red LED when it falls outside it.
+- Outputs sensor readings, voltage measurements and calculated pH values through the serial monitor for debugging and testing.
 
 ## Development & Implementation
 - Hardware integration and component connectivity.
